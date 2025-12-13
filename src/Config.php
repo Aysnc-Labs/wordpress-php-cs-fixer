@@ -2,6 +2,7 @@
 
 namespace Aysnc\WordPressPHPCSFixer;
 
+use Aysnc\WordPressPHPCSFixer\Fixers\OpenTagSpacingFixer;
 use Aysnc\WordPressPHPCSFixer\Fixers\SpacesInsideArrayBracketsFixer;
 use PhpCsFixer\Config as BaseConfig;
 
@@ -28,6 +29,7 @@ class Config {
 	 */
 	public static function getCustomFixers(): array {
 		return [
+			new OpenTagSpacingFixer(),
 			new SpacesInsideArrayBracketsFixer(),
 		];
 	}
@@ -47,6 +49,9 @@ class Config {
 
 			// No blank line after opening PHP tag.
 			'blank_line_after_opening_tag' => false,
+
+			// Custom rule: open tag spacing (no blank line before docblock, one blank line before other code).
+			'Aysnc/open_tag_spacing' => true,
 
 			// Import ordering.
 			'ordered_imports' => [
