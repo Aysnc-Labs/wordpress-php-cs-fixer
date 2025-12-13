@@ -29,6 +29,7 @@ class ExampleClass
 		// Array access examples.
 		$value = $data['key'];
 		$dynamic = $data[$variable];
+		$class_value= new \SomeNamespace\SomeClass( );
 
 		// Non-Yoda condition.
 		if ($value == 'test') {
@@ -56,10 +57,23 @@ class ExampleClass
 	}
 }
 
+/**
+ * Standalone function
+ * @param \SomeNamespace\SomeClass2 $param1 Param 1
+ * @param int $param2 Param 2
+ * @return int
+ */
 function standalone_function($param1, $param2)
 {
 	if ($param1 != null) {
 		return $param1;
+	}
+
+	if (
+		$param1 instanceof \SomeNamespace\SomeClass2 ||
+		$param2 > 10
+	) {
+		return 0;
 	}
 
 	return $param2;

@@ -7,6 +7,9 @@
 
 namespace Test;
 
+use SomeNamespace\SomeClass;
+use SomeNamespace\SomeClass2;
+
 class ExampleClass {
 	private $items = [];
 
@@ -23,8 +26,9 @@ class ExampleClass {
 		$array = [ 'foo', 'bar', 'baz' ];
 
 		// Array access examples.
-		$value   = $data['key'];
-		$dynamic = $data[ $variable ];
+		$value       = $data['key'];
+		$dynamic     = $data[ $variable ];
+		$class_value = new SomeClass();
 
 		// Non-Yoda condition.
 		if ( 'test' === $value ) {
@@ -52,9 +56,24 @@ class ExampleClass {
 	}
 }
 
+/**
+ * Standalone function.
+ *
+ * @param SomeClass2 $param1 Param 1
+ * @param int        $param2 Param 2
+ *
+ * @return int
+ */
 function standalone_function( $param1, $param2 ) {
 	if ( null !== $param1 ) {
 		return $param1;
+	}
+
+	if (
+		$param1 instanceof SomeClass2
+		|| 10 < $param2
+	) {
+		return 0;
 	}
 
 	return $param2;

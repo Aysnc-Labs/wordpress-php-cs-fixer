@@ -18,5 +18,9 @@
     "psr-4": {
       "Aysnc\\WordPressPHPCSFixer\\": "src/"
     }
+  },
+  "scripts": {
+    "format": "php-cs-fixer fix",
+    "test": ".tests/run-tests.sh"
   }
 }
