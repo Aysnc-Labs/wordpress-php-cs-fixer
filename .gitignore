@@ -10,6 +10,7 @@
 !src
 !composer.json
 !composer.lock
+!.php-cs-fixer.dist.php
 !CONTRIBUTING.md
 !LICENSE
 !README.md
