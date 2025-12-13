@@ -4,6 +4,7 @@
 
 # --- Root
 /*
+!block-editor.php
 !.github
 !.tests
 !.editorconfig
