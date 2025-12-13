@@ -2,7 +2,9 @@
 
 namespace Aysnc\WordPressPHPCSFixer;
 
+use Aysnc\WordPressPHPCSFixer\Fixers\InlineCommentPunctuationFixer;
 use Aysnc\WordPressPHPCSFixer\Fixers\OpenTagSpacingFixer;
+use Aysnc\WordPressPHPCSFixer\Fixers\PhpdocParamPunctuationFixer;
 use Aysnc\WordPressPHPCSFixer\Fixers\SpacesInsideArrayBracketsFixer;
 use PhpCsFixer\Config as BaseConfig;
 use PhpCsFixer\Runner\Parallel\ParallelConfigFactory;
@@ -35,7 +37,9 @@ class Config {
 	 */
 	public static function getCustomFixers(): array {
 		return [
+			new InlineCommentPunctuationFixer(),
 			new OpenTagSpacingFixer(),
+			new PhpdocParamPunctuationFixer(),
 			new SpacesInsideArrayBracketsFixer(),
 		];
 	}
@@ -53,11 +57,20 @@ class Config {
 			// Override indentation to use tabs.
 			'indentation_type' => true,
 
+			// Declare statements with spaces around equals.
+			'declare_equal_normalize' => [ 'space' => 'single' ],
+
 			// No blank line after opening PHP tag.
 			'blank_line_after_opening_tag' => false,
 
+			// Custom rule: inline comment punctuation.
+			'Aysnc/inline_comment_punctuation' => true,
+
 			// Custom rule: open tag spacing (no blank line before docblock, one blank line before other code).
 			'Aysnc/open_tag_spacing' => true,
+
+			// Custom rule: PHPDoc param/return/throws/var punctuation.
+			'Aysnc/phpdoc_param_punctuation' => true,
 
 			// Custom rule: spaces inside array brackets.
 			'Aysnc/spaces_inside_array_brackets' => true,
@@ -110,6 +123,7 @@ class Config {
 
 			// Binary operator spaces with alignment.
 			'binary_operator_spaces' => [
+				'default'   => 'single_space',
 				'operators' => [
 					'='  => 'align_single_space_minimal',
 					'=>' => 'align_single_space_minimal',
@@ -141,9 +155,6 @@ class Config {
 
 			// PHPDoc separation.
 			'phpdoc_separation' => true,
-
-			// PHPDoc summary.
-			'phpdoc_summary' => true,
 
 			// PHPDoc alignment.
 			'phpdoc_align' => [ 'align' => 'vertical' ],

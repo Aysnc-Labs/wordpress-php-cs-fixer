@@ -1,6 +1,6 @@
 <?php
 /**
- * Description goes here.
+ * Description goes here
  *
  * @package somepackage
  */
@@ -66,10 +66,10 @@ class ExampleClass {
 }
 
 /**
- * Standalone function.
+ * Standalone function
  *
- * @param SomeClass2 $param1 Param 1
- * @param int        $param2 Param 2
+ * @param SomeClass2 $param1 Param 1.
+ * @param int        $param2 Param 2.
  *
  * @return int
  */

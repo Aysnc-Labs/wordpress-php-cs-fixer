@@ -52,12 +52,12 @@ final class SpacesInsideArrayBracketsFixer extends AbstractFixer {
 		$isEmptyArray = $nextIndex === $closeIndex;
 
 		if ( $isEmptyArray ) {
-			// For empty arrays, ensure no spaces: []
+			// For empty arrays, ensure no spaces: [].
 			$tokens->ensureWhitespaceAtIndex( $index + 1, 0, '' );
 			return;
 		}
 
-		// Skip multi-line arrays (check if there's a newline between brackets)
+		// Skip multi-line arrays (check if there's a newline between brackets).
 		for ( $i = $index + 1; $i < $closeIndex; ++$i ) {
 			if ( $tokens[ $i ]->isGivenKind( T_WHITESPACE ) && str_contains( $tokens[ $i ]->getContent(), "\n" ) ) {
 				return; // Multi-line array, skip.
@@ -87,7 +87,7 @@ final class SpacesInsideArrayBracketsFixer extends AbstractFixer {
 		// Find the closing bracket for array access.
 		$closeIndex = $tokens->findBlockEnd( Tokens::BLOCK_TYPE_INDEX_SQUARE_BRACE, $index );
 
-		// Check if it's empty (shouldn't happen for array access)
+		// Check if it's empty (shouldn't happen for array access).
 		$nextIndex = $tokens->getNextMeaningfulToken( $index );
 
 		if ( $nextIndex === $closeIndex ) {
