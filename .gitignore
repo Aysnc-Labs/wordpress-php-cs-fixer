@@ -6,6 +6,8 @@
 /*
 !.github
 !.tests
+!.editorconfig
+!.gitattributes
 !.gitignore
 !src
 !composer.json
