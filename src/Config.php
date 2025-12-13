@@ -59,6 +59,9 @@ class Config {
 			// Custom rule: open tag spacing (no blank line before docblock, one blank line before other code).
 			'Aysnc/open_tag_spacing' => true,
 
+			// Custom rule: spaces inside array brackets.
+			'Aysnc/spaces_inside_array_brackets' => true,
+
 			// Import ordering.
 			'ordered_imports' => [
 				'sort_algorithm' => 'alpha',
@@ -101,9 +104,6 @@ class Config {
 			'array_syntax' => [
 				'syntax' => 'short',
 			],
-
-			// Custom rule: spaces inside array brackets.
-			'Aysnc/spaces_inside_array_brackets' => true,
 
 			// Array indentation.
 			'array_indentation' => true,
