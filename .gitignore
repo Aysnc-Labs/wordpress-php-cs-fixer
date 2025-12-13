@@ -1,0 +1,15 @@
+# --- Windows and Mac files
+[Tt]humbs.db
+.DS_Store
+
+# --- Root
+/*
+!.github
+!.tests
+!.gitignore
+!src
+!composer.json
+!composer.lock
+!CONTRIBUTING.md
+!LICENSE
+!README.md
