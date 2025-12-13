@@ -11,10 +11,8 @@ use PhpCsFixer\Tokenizer\Token;
 use PhpCsFixer\Tokenizer\Tokens;
 use SplFileInfo;
 
-final class SpacesInsideArrayBracketsFixer extends AbstractFixer
-{
-	public function getDefinition(): FixerDefinitionInterface
-	{
+final class SpacesInsideArrayBracketsFixer extends AbstractFixer {
+	public function getDefinition(): FixerDefinitionInterface {
 		return new FixerDefinition(
 			'There must be a space after opening bracket and before closing bracket of arrays.',
 			[
@@ -25,15 +23,13 @@ final class SpacesInsideArrayBracketsFixer extends AbstractFixer
 		);
 	}
 
-	public function isCandidate( Tokens $tokens ): bool
-	{
+	public function isCandidate( Tokens $tokens ): bool {
 		return $tokens->isTokenKindFound( CT::T_ARRAY_SQUARE_BRACE_OPEN )
 			|| $tokens->isTokenKindFound( CT::T_ARRAY_INDEX_CURLY_BRACE_OPEN )
 			|| $tokens->isTokenKindFound( '[' );
 	}
 
-	protected function applyFix( SplFileInfo $file, Tokens $tokens ): void
-	{
+	protected function applyFix( SplFileInfo $file, Tokens $tokens ): void {
 		for ( $index = $tokens->count() - 1; 0 <= $index; --$index ) {
 			// Check for array literals.
 			if ( $tokens[ $index ]->isGivenKind( CT::T_ARRAY_SQUARE_BRACE_OPEN ) ) {
@@ -47,8 +43,7 @@ final class SpacesInsideArrayBracketsFixer extends AbstractFixer
 		}
 	}
 
-	private function fixArrayLiteralSpacing( Tokens $tokens, int $index ): void
-	{
+	private function fixArrayLiteralSpacing( Tokens $tokens, int $index ): void {
 		// Find the closing bracket.
 		$closeIndex = $tokens->findBlockEnd( Tokens::BLOCK_TYPE_ARRAY_SQUARE_BRACE, $index );
 
@@ -88,8 +83,7 @@ final class SpacesInsideArrayBracketsFixer extends AbstractFixer
 		}
 	}
 
-	private function fixArrayAccessSpacing( Tokens $tokens, int $index ): void
-	{
+	private function fixArrayAccessSpacing( Tokens $tokens, int $index ): void {
 		// Find the closing bracket for array access.
 		$closeIndex = $tokens->findBlockEnd( Tokens::BLOCK_TYPE_INDEX_SQUARE_BRACE, $index );
 
@@ -186,13 +180,11 @@ final class SpacesInsideArrayBracketsFixer extends AbstractFixer
 		}
 	}
 
-	public function getName(): string
-	{
+	public function getName(): string {
 		return 'Aysnc/spaces_inside_array_brackets';
 	}
 
-	public function getPriority(): int
-	{
+	public function getPriority(): int {
 		// Should run after array_syntax.
 		return 0;
 	}

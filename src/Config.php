@@ -8,15 +8,13 @@ use PhpCsFixer\Config as BaseConfig;
 /**
  * Helper class to easily create a PHP-CS-Fixer config with WordPress custom fixers.
  */
-class Config
-{
+class Config {
 	/**
 	 * Create a new PHP-CS-Fixer config with WordPress custom fixers registered.
 	 *
 	 * @return BaseConfig
 	 */
-	public static function create(): BaseConfig
-	{
+	public static function create(): BaseConfig {
 		$config = new BaseConfig();
 		$config->registerCustomFixers( self::getCustomFixers() );
 
@@ -28,8 +26,7 @@ class Config
 	 *
 	 * @return array
 	 */
-	public static function getCustomFixers(): array
-	{
+	public static function getCustomFixers(): array {
 		return [
 			new SpacesInsideArrayBracketsFixer(),
 		];
@@ -40,8 +37,7 @@ class Config
 	 *
 	 * @return array
 	 */
-	public static function getRules(): array
-	{
+	public static function getRules(): array {
 		return [
 			// PSR-12 preset as base.
 			'@PSR12' => true,
@@ -181,19 +177,6 @@ class Config
 			// Enforce strict parameter typing.
 			'strict_param' => true,
 
-			// Blank line before statements.
-			'blank_line_before_statement' => [
-				'statements' => [
-					'if',
-					'for',
-					'foreach',
-					'switch',
-					'while',
-					'do',
-					'try',
-				],
-			],
-
 			// Use pre-increment/decrement operators.
 			'increment_style' => [ 'style' => 'pre' ],
 
@@ -208,6 +191,15 @@ class Config
 
 			// The @PSR12 preset already handles this correctly, but we ensure switch_case_space is enabled.
 			'switch_case_space' => true,
+
+			// WordPress style braces (same line).
+			'curly_braces_position' => [
+				'functions_opening_brace'           => 'same_line',
+				'classes_opening_brace'             => 'same_line',
+				'control_structures_opening_brace'  => 'same_line',
+				'anonymous_functions_opening_brace' => 'same_line',
+				'anonymous_classes_opening_brace'   => 'same_line',
+			],
 		];
 	}
 }
