@@ -6,6 +6,14 @@
  * @package somepackage
  */
 namespace Test;
+use SomeNamespace\SomeMissingClass;
+use const SomeNamespace\MISSING_CONST;
+use const SomeNamespace\CONST_1;
+use function SomeNamespace\function_2;
+use SomeNamespace\SomeClass3;
+use const SomeNamespace\CONST_2;
+use function SomeNamespace\missing_function;
+use function SomeNamespace\function_1;
 
 class ExampleClass
 {
@@ -52,6 +60,11 @@ class ExampleClass
 		foreach ($array as $item ) {
 			echo $item;
 		}
+
+		// Use statements.
+		function_1();
+		function_2();
+		new \SomeNamespace\SomeClass3();
 
 		return $result;
 	}

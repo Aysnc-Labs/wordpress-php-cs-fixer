@@ -9,6 +9,10 @@ namespace Test;
 
 use SomeNamespace\SomeClass;
 use SomeNamespace\SomeClass2;
+use SomeNamespace\SomeClass3;
+
+use function SomeNamespace\function_1;
+use function SomeNamespace\function_2;
 
 class ExampleClass {
 	private $items = [];
@@ -51,6 +55,11 @@ class ExampleClass {
 		foreach ( $array as $item ) {
 			echo $item;
 		}
+
+		// Use statements.
+		function_1();
+		function_2();
+		new SomeClass3();
 
 		return $result;
 	}
