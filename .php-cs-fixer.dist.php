@@ -12,9 +12,4 @@ $finder = Finder::create()
 	->exclude( 'vendor' );
 
 return Config::create()
-	->setFinder( $finder )
-	->setRiskyAllowed( true )
-	->setIndent( "\t" )
-	->setLineEnding( "\n" )
-	->setParallelConfig( PhpCsFixer\Runner\Parallel\ParallelConfigFactory::detect() )
-	->setRules( Config::getRules() );
+	->setFinder( $finder );

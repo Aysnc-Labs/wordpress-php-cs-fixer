@@ -5,6 +5,7 @@ namespace Aysnc\WordPressPHPCSFixer;
 use Aysnc\WordPressPHPCSFixer\Fixers\OpenTagSpacingFixer;
 use Aysnc\WordPressPHPCSFixer\Fixers\SpacesInsideArrayBracketsFixer;
 use PhpCsFixer\Config as BaseConfig;
+use PhpCsFixer\Runner\Parallel\ParallelConfigFactory;
 
 /**
  * Helper class to easily create a PHP-CS-Fixer config with WordPress custom fixers.
@@ -18,6 +19,11 @@ class Config {
 	public static function create(): BaseConfig {
 		$config = new BaseConfig();
 		$config->registerCustomFixers( self::getCustomFixers() );
+		$config->setRiskyAllowed( true );
+		$config->setIndent( "\t" );
+		$config->setLineEnding( "\n" );
+		$config->setParallelConfig( ParallelConfigFactory::detect() );
+		$config->setRules( self::getRules() );
 
 		return $config;
 	}

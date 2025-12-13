@@ -9,7 +9,7 @@ namespace Test;
 
 class ExampleClass
 {
-	private $items = [];
+    private $items = [];
 
 	public function __construct($items)
 	{
@@ -28,7 +28,7 @@ class ExampleClass
 
 		// Array access examples.
 		$value = $data['key'];
-		$dynamic = $data[$variable];
+		$dynamic = $data[$variable ];
 		$class_value= new \SomeNamespace\SomeClass( );
 
 		// Non-Yoda condition.
@@ -37,7 +37,7 @@ class ExampleClass
 		}
 
 		// Double quotes.
-		$string = "hello world";
+		$string  = "hello world" ;
 
 		// Multiline array without trailing comma.
 		$config = [
