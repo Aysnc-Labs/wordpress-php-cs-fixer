@@ -1,11 +1,11 @@
 <?php
 
-namespace Aysnc\WordPressPHPCSFixer;
+namespace Aysnc\WordPress\PHPCSFixer;
 
-use Aysnc\WordPressPHPCSFixer\Fixers\InlineCommentPunctuationFixer;
-use Aysnc\WordPressPHPCSFixer\Fixers\OpenTagSpacingFixer;
-use Aysnc\WordPressPHPCSFixer\Fixers\PhpdocParamPunctuationFixer;
-use Aysnc\WordPressPHPCSFixer\Fixers\SpacesInsideArrayBracketsFixer;
+use Aysnc\WordPress\PHPCSFixer\Fixers\InlineCommentPunctuationFixer;
+use Aysnc\WordPress\PHPCSFixer\Fixers\OpenTagSpacingFixer;
+use Aysnc\WordPress\PHPCSFixer\Fixers\PhpdocParamPunctuationFixer;
+use Aysnc\WordPress\PHPCSFixer\Fixers\SpacesInsideArrayBracketsFixer;
 use PhpCsFixer\Config as BaseConfig;
 use PhpCsFixer\Runner\Parallel\ParallelConfigFactory;
 

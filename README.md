@@ -18,7 +18,7 @@ Create `.php-cs-fixer.dist.php` in your project root:
 ```php
 <?php
 
-use Aysnc\WordPressPHPCSFixer\Config;
+use Aysnc\WordPress\PHPCSFixer\Config;
 use PhpCsFixer\Finder;
 
 require_once __DIR__ . '/vendor/autoload.php';

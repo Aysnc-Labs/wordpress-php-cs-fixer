@@ -1,6 +1,6 @@
 <?php
 
-namespace Aysnc\WordPressPHPCSFixer\Fixers;
+namespace Aysnc\WordPress\PHPCSFixer\Fixers;
 
 use PhpCsFixer\AbstractFixer;
 use PhpCsFixer\FixerDefinition\CodeSample;

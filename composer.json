@@ -16,7 +16,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Aysnc\\WordPressPHPCSFixer\\": "src/"
+      "Aysnc\\WordPress\\PHPCSFixer\\": "src/"
     }
   },
   "scripts": {

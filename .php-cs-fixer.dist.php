@@ -1,6 +1,6 @@
 <?php
 
-use Aysnc\WordPressPHPCSFixer\Config;
+use Aysnc\WordPress\PHPCSFixer\Config;
 use PhpCsFixer\Finder;
 
 require_once __DIR__ . '/vendor/autoload.php';
